@@ -6,17 +6,7 @@
 # TO_RUN:         docker run -p 5000:5000 registry
 
 # Latest Ubuntu LTS
-from    ubuntu:14.04
-
-# Update
-run apt-get update
-run apt-get -y upgrade
-
-# Install pip
-run apt-get -y install python-pip
-
-# Install deps for backports.lzma (python2 requires it)
-run apt-get -y install python-dev liblzma-dev libevent1-dev
+from    crosbymichael/python
 
 add . /docker-registry
 add ./config/boto.cfg /etc/boto.cfg
